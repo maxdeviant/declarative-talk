@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "history": "^4.3.0",
+    "raw-loader": "^0.5.1",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "spectacle": "^1.2.5",
