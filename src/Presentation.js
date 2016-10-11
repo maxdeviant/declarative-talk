@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import createHistory from 'history/createBrowserHistory'
 import CodeSlide from 'spectacle-code-slide';
 import {
   Spectacle,
@@ -10,14 +9,11 @@ import {
 import theme from './theme';
 import './Presentation.css';
 
-const history = createHistory();
-
 class Presentation extends Component {
   render() {
     return (
       <Spectacle
-        theme={theme}
-        history={history}>
+        theme={theme}>
         <Deck
           progress='bar'>
           <Slide
