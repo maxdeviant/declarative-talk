@@ -17,16 +17,23 @@ class Presentation extends Component {
           progress='bar'>
           <Slide
             id='intro'>
-              <h1>
-                Declaratively Composable
-              </h1>
-              <h2>
-                A Natural Progression Towards Declarative Programming
-              </h2>
-            </Slide>
-          <Slide>
-            <h1>Ho</h1>
+            <h1>
+              Declaratively Composable
+            </h1>
+            <h2>
+              A Natural Progression Towards Declarative Programming
+            </h2>
           </Slide>
+          <Slide>
+          </Slide>
+          <CodeSlide
+            lang='ocaml'
+            code={require('raw!./examples/ocaml/fibonacci.ml')}
+            ranges={[
+              {
+                loc: [0, 3]
+              }
+            ]} />
         </Deck>
       </Spectacle>
     );
