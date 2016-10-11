@@ -6,7 +6,6 @@
     "react-scripts": "0.6.1"
   },
   "dependencies": {
-    "history": "^4.3.0",
     "raw-loader": "^0.5.1",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
@@ -16,6 +15,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "publish": "npm run build && ns --name declarative-talk build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
