@@ -3,7 +3,17 @@ import CodeSlide from 'spectacle-code-slide';
 import {
   Spectacle,
   Deck,
-  Slide
+  Slide,
+  Layout,
+  Fit,
+  Fill,
+  Appear,
+  Heading,
+  List,
+  ListItem,
+  BlockQuote,
+  Quote,
+  Cite
 } from 'spectacle';
 
 import theme from './theme';
@@ -18,12 +28,84 @@ class Presentation extends Component {
           progress='bar'>
           <Slide
             id='intro'>
-            <h1>
+            <Heading
+              size={1}>
               Declaratively Composable
-            </h1>
-            <h2>
+            </Heading>
+            <Heading
+              size={2}
+              fit
+              margin='50px 0'>
               A Natural Progression Towards Declarative Programming
-            </h2>
+            </Heading>
+          </Slide>
+          <Slide
+            id='what-is-declarative'>
+            <Heading
+              size={2}>
+              What is Declarative Programming?
+            </Heading>
+          </Slide>
+          <Slide>
+            <BlockQuote>
+              <Quote>
+                A programming paradigm that expresses the logic of a computation without describing its control flow.
+              </Quote>
+              <Cite>
+                Lloyd, J.W., Practical Advantages of Declarative Programming
+              </Cite>
+            </BlockQuote>
+          </Slide>
+          <Slide
+            id='imperative-vs-declarative'>
+            <Layout>
+              <Fill>
+                <Heading
+                  size={6}>
+                  Imperative
+                </Heading>
+                <List>
+                  <Appear>
+                    <ListItem>
+                      C / C++
+                    </ListItem>
+                  </Appear>
+                  <Appear>
+                    <ListItem>
+                      Java
+                    </ListItem>
+                  </Appear>
+                  <Appear>
+                    <ListItem>
+                      C# / VB.NET
+                    </ListItem>
+                  </Appear>
+                </List>
+              </Fill>
+              <Fill>
+                <Heading
+                  size={6}>
+                  Declarative
+                </Heading>
+                <List>
+                  <Appear>
+                    <ListItem>
+                      Lisp
+                    </ListItem>
+                  </Appear>
+                  <Appear>
+                    <ListItem>
+                      Haskell
+                    </ListItem>
+                  </Appear>
+                  <Appear>
+                    <ListItem>
+                      OCaml
+                    </ListItem>
+                  </Appear>
+                </List>
+              </Fill>
+            </Layout>
           </Slide>
           <CodeSlide
             lang='ocaml'
