@@ -13,11 +13,46 @@ import {
   ListItem,
   BlockQuote,
   Quote,
-  Cite
+  Cite,
+  Link,
+  Image,
+  S
 } from 'spectacle';
+import preloader from 'spectacle/lib/utils/preloader';
 
 import theme from './theme';
 import './Presentation.css';
+
+const images = {
+  reasonLogo: require('../public/images/reason-logo.png')
+};
+
+preloader(images);
+
+const sections = {
+  declarativeProgramming101: {
+    id: 'declarative-programming-101',
+    title: 'Declarative Programming 101'
+  },
+  priorArt: {
+    id: 'prior-art',
+    title: 'Prior Art'
+  },
+  applicationsAtGravic: {
+    id: 'applications-at-gravic',
+    title: 'Applications at Gravic'
+  }
+}
+
+const createSectionTitleSlide = ({ id, title }) => (
+  <Slide
+    id={id}>
+    <Heading
+      size={2}>
+      {title}
+    </Heading>
+  </Slide>
+);
 
 class Presentation extends Component {
   render() {
@@ -35,29 +70,48 @@ class Presentation extends Component {
             <Heading
               size={2}
               fit
-              margin='50px 0'>
-              A Natural Progression Towards Declarative Programming
+              margin='1em 0'>
+              A Logical Progression Towards Declarative Programming
+            </Heading>
+            <Heading
+              size={6}
+              margin='2em 0'
+              textSize='.75em'
+              bold={false}>
+              Marshall Bowers
             </Heading>
           </Slide>
-          <Slide
-            id='what-is-declarative'>
+          <Slide>
             <Heading
               size={2}>
-              What is Declarative Programming?
+              Overview
             </Heading>
+            <List>
+              {Object.keys(sections)
+                .map(key => sections[key])
+                .map(section => (
+                  <Appear key={section.id}>
+                    <ListItem>
+                      <Link href={`#/${section.id}`}>
+                        {section.title}
+                      </Link>
+                    </ListItem>
+                  </Appear>
+                ))}
+            </List>
           </Slide>
+          {createSectionTitleSlide(sections.declarativeProgramming101)}
           <Slide>
             <BlockQuote>
               <Quote>
                 A programming paradigm that expresses the logic of a computation without describing its control flow.
               </Quote>
               <Cite>
-                Lloyd, J.W., Practical Advantages of Declarative Programming
+                J.W. Lloyd, "Practical Advantages of Declarative Programming"
               </Cite>
             </BlockQuote>
           </Slide>
-          <Slide
-            id='imperative-vs-declarative'>
+          <Slide>
             <Layout>
               <Fill>
                 <Heading
@@ -107,6 +161,15 @@ class Presentation extends Component {
               </Fill>
             </Layout>
           </Slide>
+          <Slide>
+            <Heading
+              size={6}>
+              {`Let's Talk JavaScript`}
+            </Heading>
+            <List>
+
+            </List>
+          </Slide>
           <CodeSlide
             lang='ocaml'
             code={require('raw!./examples/ocaml/fibonacci.ml')}
@@ -120,6 +183,13 @@ class Presentation extends Component {
             ]}
             bgColor='inherit'
             transition={[]} />
+          {createSectionTitleSlide(sections.priorArt)}
+          <Slide>
+            <Image
+              src={images.reasonLogo.replace('/', '')}
+              width={500} />
+          </Slide>
+          {createSectionTitleSlide(sections.applicationsAtGravic)}
         </Deck>
       </Spectacle>
     );
