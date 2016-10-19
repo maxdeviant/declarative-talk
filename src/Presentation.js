@@ -29,6 +29,8 @@ const images = {
 
 preloader(images);
 
+const title = 'Be <Declarative />';
+
 const sections = {
   declarativeProgramming101: {
     id: 'declarative-programming-101',
@@ -64,8 +66,9 @@ class Presentation extends Component {
           <Slide
             id='intro'>
             <Heading
-              size={1}>
-              Declaratively Composable
+              size={1}
+              fit>
+              {title}
             </Heading>
             <Heading
               size={2}
