@@ -44,6 +44,9 @@ const theme = deepAssign({}, baseTheme, {
       },
       cite: {
         fontFamily: fonts.secondary
+      },
+      text: {
+        color: colors.secondary
       }
     }
   }

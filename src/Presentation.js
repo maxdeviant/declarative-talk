@@ -11,6 +11,8 @@ import {
   Heading,
   List,
   ListItem,
+  Markdown,
+  Text,
   BlockQuote,
   Quote,
   Cite,
@@ -24,12 +26,14 @@ import theme from './theme';
 import './Presentation.css';
 
 const images = {
-  reasonLogo: require('../public/images/reason-logo.png')
+  reasonLogo: require(`../public/images/reason-logo.png`),
+  toddler: require('../public/images/toddler.jpg')
 };
 
 preloader(images);
 
 const title = 'Be <Declarative />';
+const subtitle = 'A Logical Progression Towards Declarative Programming';
 
 const sections = {
   declarativeProgramming101: {
@@ -74,7 +78,7 @@ class Presentation extends Component {
               size={2}
               fit
               margin='1em 0'>
-              A Logical Progression Towards Declarative Programming
+              {subtitle}
             </Heading>
             <Heading
               size={6}
@@ -147,22 +151,195 @@ class Presentation extends Component {
                 <List>
                   <Appear>
                     <ListItem>
-                      Lisp
+                      Prolog
                     </ListItem>
                   </Appear>
                   <Appear>
                     <ListItem>
-                      Haskell
+                      SQL
                     </ListItem>
                   </Appear>
                   <Appear>
                     <ListItem>
-                      OCaml
+                      HTML
                     </ListItem>
                   </Appear>
                 </List>
               </Fill>
             </Layout>
+          </Slide>
+          <Slide>
+            <Heading
+              size={6}>
+              Functional
+            </Heading>
+            <List>
+              <Appear>
+                <ListItem>
+                  Lisp
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>
+                  Haskell
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>
+                  OCaml
+                </ListItem>
+              </Appear>
+            </List>
+          </Slide>
+          <Slide>
+            <Image
+              src={images.toddler.replace('/', '')}
+              width={500} />
+            <Text>
+              Your imperative language is a toddler
+            </Text>
+          </Slide>
+          <CodeSlide
+            lang='csharp'
+            code={require('raw!./examples/csharp/sum.cs')}
+            ranges={[
+              {
+                loc: [0, 7]
+              },
+              {
+                loc: [1, 2]
+              },
+              {
+                loc: [3, 4]
+              },
+              {
+                loc: [8, 9]
+              }
+            ]}
+            bgColor='inherit'
+            transition={[]} />
+          <CodeSlide
+            lang='typescript'
+            code={require('raw!./examples/typescript/sum.ts')}
+            ranges={[
+              {
+                loc: [0, 2]
+              },
+              {
+                loc: [1, 2]
+              },
+              {
+                loc: [3, 4]
+              }
+            ]}
+            bgColor='inherit'
+            transition={[]} />
+          <CodeSlide
+            lang='ocaml'
+            code={require('raw!./examples/ocaml/sum.ml')}
+            ranges={[
+              {
+                loc: [0, 2]
+              },
+              {
+                loc: [1, 2]
+              },
+              {
+                loc: [3, 4]
+              },
+              {
+                loc: [0, 2],
+                note: 'val sum : int list -> int = <fun>'
+              }
+            ]}
+            bgColor='inherit'
+            transition={[]} />
+          <CodeSlide
+            lang='csharp'
+            code={require('raw!./examples/csharp/sum-even.cs')}
+            ranges={[
+              {
+                loc: [0, 9]
+              },
+              {
+                loc: [3, 6]
+              },
+              {
+                loc: [10, 11]
+              }
+            ]}
+            bgColor='inherit'
+            transition={[]} />
+          <CodeSlide
+            lang='typescript'
+            code={require('raw!./examples/typescript/sum-even.ts')}
+            ranges={[
+              {
+                loc: [0, 4]
+              },
+              {
+                loc: [2, 3]
+              },
+              {
+                loc: [3, 4]
+              },
+              {
+                loc: [5, 6]
+              }
+            ]}
+            bgColor='inherit'
+            transition={[]} />
+          <CodeSlide
+            lang='ocaml'
+            code={require('raw!./examples/ocaml/sum-even.ml')}
+            ranges={[
+              {
+                loc: [0, 4]
+              },
+              {
+                loc: [2, 3]
+              },
+              {
+                loc: [5, 6]
+              },
+              {
+                loc: [0, 4],
+                note: 'val sum_even : int list -> int = <fun>'
+              }
+            ]}
+            bgColor='inherit'
+            transition={[]} />
+          <CodeSlide
+            lang='ocaml'
+            code={require('raw!./examples/ocaml/sum-even-pipe.ml')}
+            ranges={[
+              {
+                loc: [0, 4]
+              },
+              {
+                loc: [2, 3]
+              },
+              {
+                loc: [3, 4]
+              },
+              {
+                loc: [5, 6]
+              },
+              {
+                loc: [0, 4],
+                note: 'val sum_even : int list -> int = <fun>'
+              }
+            ]}
+            bgColor='inherit'
+            transition={[]} />
+          <Slide>
+            <List>
+              <Appear>
+                <ListItem>
+
+                </ListItem>
+              </Appear>
+            </List>
           </Slide>
           <Slide>
             <Heading
