@@ -173,23 +173,36 @@ class Presentation extends Component {
               size={6}>
               Functional
             </Heading>
-            <List>
-              <Appear>
-                <ListItem>
-                  Lisp
-                </ListItem>
-              </Appear>
-              <Appear>
-                <ListItem>
-                  Haskell
-                </ListItem>
-              </Appear>
-              <Appear>
-                <ListItem>
-                  OCaml
-                </ListItem>
-              </Appear>
-            </List>
+            <Layout>
+              <Fill>
+                <List>
+                  <Appear>
+                    <ListItem>
+                      Lisp
+                    </ListItem>
+                  </Appear>
+                  <Appear>
+                    <ListItem>
+                      Haskell
+                    </ListItem>
+                  </Appear>
+                </List>
+              </Fill>
+              <Fill>
+                <List>
+                  <Appear>
+                    <ListItem>
+                      OCaml
+                    </ListItem>
+                  </Appear>
+                  <Appear>
+                    <ListItem>
+                      F#
+                    </ListItem>
+                  </Appear>
+                </List>
+              </Fill>
+            </Layout>
           </Slide>
           <Slide>
             <Image
@@ -332,37 +345,6 @@ class Presentation extends Component {
             ]}
             bgColor='inherit'
             transition={[]} />
-          <Slide>
-            <List>
-              <Appear>
-                <ListItem>
-
-                </ListItem>
-              </Appear>
-            </List>
-          </Slide>
-          <Slide>
-            <Heading
-              size={6}>
-              {`Let's Talk JavaScript`}
-            </Heading>
-            <List>
-
-            </List>
-          </Slide>
-          <CodeSlide
-            lang='ocaml'
-            code={require('raw!./examples/ocaml/fibonacci.ml')}
-            ranges={[
-              {
-                loc: [0, 3]
-              },
-              {
-                loc: [3, 4]
-              }
-            ]}
-            bgColor='inherit'
-            transition={[]} />
           {createSectionTitleSlide(sections.priorArt)}
           <Slide>
             <Image
@@ -370,6 +352,50 @@ class Presentation extends Component {
               width={500} />
           </Slide>
           {createSectionTitleSlide(sections.applicationsAtGravic)}
+          <Slide>
+            <Heading
+              size={6}>
+              LINQ
+            </Heading>
+            <List>
+              <ListItem>
+                .NET Language-Integrated Query
+              </ListItem>
+              <ListItem>
+                Declarative Syntax
+              </ListItem>
+            </List>
+          </Slide>
+          <CodeSlide
+            lang='csharp'
+            code={require('raw!./examples/csharp/linq.cs')}
+            ranges={[
+              {
+                loc: [0, 4]
+              }
+            ]}
+            bgColor='inherit'
+            transition={[]} />
+          <Slide>
+            <Heading
+              size={6}>
+              F#
+            </Heading>
+            <List>
+              <ListItem>
+                General purpose programming language
+              </ListItem>
+              <ListItem>
+                Strong, static typing
+              </ListItem>
+              <ListItem>
+                Similar to OCaml
+              </ListItem>
+              <ListItem>
+                Runs on the .NET platform
+              </ListItem>
+            </List>
+          </Slide>
         </Deck>
       </Spectacle>
     );
