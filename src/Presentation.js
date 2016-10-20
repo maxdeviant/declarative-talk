@@ -32,7 +32,7 @@ const images = {
 preloader(images);
 
 const title = 'Be <Declarative />';
-const subtitle = 'A Logical Progression Towards Declarative Programming';
+const subtitle = 'A Natural Progression Towards Declarative Programming';
 
 const sections = {
   declarativeProgramming101: {
