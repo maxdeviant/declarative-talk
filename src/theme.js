@@ -47,6 +47,10 @@ const theme = deepAssign({}, baseTheme, {
       },
       text: {
         color: colors.secondary
+      },
+      link: {
+        color: colors.secondary,
+        textDecoration: 'underline'
       }
     }
   }
