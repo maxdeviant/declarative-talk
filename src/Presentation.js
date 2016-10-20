@@ -48,6 +48,10 @@ const sections = {
   applicationsAtGravic: {
     id: 'applications-at-gravic',
     title: 'Applications at Gravic'
+  },
+  questions: {
+    id: 'questions',
+    title: 'Questions?'
   }
 }
 
@@ -213,6 +217,15 @@ class Presentation extends Component {
               Your imperative language is a toddler
             </Text>
           </Slide>
+          <Slide>
+            <Text>
+              Imperative = <S type='italic'>HOW</S>
+            </Text>
+            <br />
+            <Text>
+              Declarative = <S type='italic'>WHAT</S>
+            </Text>
+          </Slide>
           <CodeSlide
             lang='csharp'
             code={require('raw!./examples/csharp/sum.cs')}
@@ -346,11 +359,44 @@ class Presentation extends Component {
             ]}
             bgColor='inherit'
             transition={[]} />
+          <Slide>
+            <Text>
+              Functional programming is a step towards declarative programming
+            </Text>
+          </Slide>
+          <Slide>
+            <Heading
+              fit
+              size={6}>
+              Benefits of Functional / Declarative Programming
+            </Heading>
+            <List>
+              <Appear>
+                <ListItem>
+                  Less program state
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>
+                  Fewer side effects
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>
+                  Easier to reason about
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>
+                  Faster to iterate
+                </ListItem>
+              </Appear>
+            </List>
+          </Slide>
           {createSectionTitleSlide(sections.priorArt)}
           <Slide>
             <Image
-              src={images.reactLogo.replace('/', '')}
-              />
+              src={images.reactLogo.replace('/', '')} />
           </Slide>
           <Slide>
             <Heading
@@ -373,26 +419,112 @@ class Presentation extends Component {
                   Emphasis on composition
                 </ListItem>
               </Appear>
+              <Appear>
+                <ListItem>
+                  Created by Facebook
+                </ListItem>
+              </Appear>
             </List>
           </Slide>
+          <CodeSlide
+            lang='jsx'
+            code={require('raw!./examples/js/react.js.example')}
+            ranges={[
+              {
+                loc: [0, 5]
+              },
+              {
+                loc: [6, 9]
+              }
+            ]}
+            bgColor='inherit'
+            transition={[]} />
           <Slide>
             <Image
               src={images.reasonLogo.replace('/', '')}
               width={500} />
           </Slide>
+          <Slide>
+            <Heading
+              size={6}>
+              Reason
+            </Heading>
+            <List>
+              <Appear>
+                <ListItem>
+                  Interface to OCaml
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>
+                  Similar style to JavaScript
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>
+                  Integrates seamlessly with OCaml
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>
+                  Created by Facebook
+                </ListItem>
+              </Appear>
+            </List>
+          </Slide>
+          <Slide>
+            <Heading
+              size={6}>
+              BuckleScript
+            </Heading>
+            <List>
+              <Appear>
+                <ListItem>
+                  OCaml backend that emits JavaScript
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>
+                  Integrates with OCaml & JavaScript code
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>
+                  Created by Bloomberg
+                </ListItem>
+              </Appear>
+            </List>
+          </Slide>
           {createSectionTitleSlide(sections.applicationsAtGravic)}
+          <Slide>
+            <Heading
+              size={6}>
+              React
+            </Heading>
+            <br />
+            <Text
+              style={{
+                lineHeight: '1.5em'
+              }}>
+              Already in use by RPG for Remark Test Grading Cloud Edition 2.0
+            </Text>
+          </Slide>
           <Slide>
             <Heading
               size={6}>
               LINQ
             </Heading>
             <List>
-              <ListItem>
-                .NET Language-Integrated Query
-              </ListItem>
-              <ListItem>
-                Declarative Syntax
-              </ListItem>
+              <Appear>
+                <ListItem>
+                  .NET Language-Integrated Query
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>
+                  Declarative Syntax
+                </ListItem>
+              </Appear>
             </List>
           </Slide>
           <CodeSlide
@@ -411,19 +543,62 @@ class Presentation extends Component {
               F#
             </Heading>
             <List>
-              <ListItem>
-                General purpose programming language
-              </ListItem>
-              <ListItem>
-                Strong, static typing
-              </ListItem>
-              <ListItem>
-                Similar to OCaml
-              </ListItem>
-              <ListItem>
-                Runs on the .NET platform
-              </ListItem>
+              <Appear>
+                <ListItem>
+                  General purpose programming language
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>
+                  Strong, static typing
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>
+                  Similar to OCaml
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>
+                  Runs on the .NET platform
+                </ListItem>
+              </Appear>
             </List>
+          </Slide>
+          <Slide>
+            <Heading
+              size={6}>
+              OCaml / Reason
+            </Heading>
+            <List>
+              <Appear>
+                <ListItem>
+                  Powerful type system (strong, static)
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>
+                  Emits performant native code
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>
+                  Compiles to JavaScript
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>
+                  Used heavily by companies like Jane Street
+                </ListItem>
+              </Appear>
+            </List>
+          </Slide>
+          {createSectionTitleSlide(sections.questions)}
+          <Slide>
+            <Heading
+              size={2}>
+              Thank You!
+            </Heading>
           </Slide>
         </Deck>
       </Spectacle>

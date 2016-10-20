@@ -1,0 +1,9 @@
+const Button = ({ children, onClick }) => (
+  <button onClick={onClick}>
+    {children}
+  </button>
+);
+
+<Button onClick={e => alert('clicked!')}>
+  Click Me!
+</Button>
