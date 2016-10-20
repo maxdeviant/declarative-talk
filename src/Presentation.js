@@ -26,7 +26,8 @@ import theme from './theme';
 import './Presentation.css';
 
 const images = {
-  reasonLogo: require(`../public/images/reason-logo.png`),
+  reactLogo: require('../public/images/react-logo.svg'),
+  reasonLogo: require('../public/images/reason-logo.png'),
   toddler: require('../public/images/toddler.jpg')
 };
 
@@ -346,6 +347,34 @@ class Presentation extends Component {
             bgColor='inherit'
             transition={[]} />
           {createSectionTitleSlide(sections.priorArt)}
+          <Slide>
+            <Image
+              src={images.reactLogo.replace('/', '')}
+              />
+          </Slide>
+          <Slide>
+            <Heading
+              size={6}>
+              React
+            </Heading>
+            <List>
+              <Appear>
+                <ListItem>
+                  Declarative UI
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>
+                  Components!
+                </ListItem>
+              </Appear>
+              <Appear>
+                <ListItem>
+                  Emphasis on composition
+                </ListItem>
+              </Appear>
+            </List>
+          </Slide>
           <Slide>
             <Image
               src={images.reasonLogo.replace('/', '')}
